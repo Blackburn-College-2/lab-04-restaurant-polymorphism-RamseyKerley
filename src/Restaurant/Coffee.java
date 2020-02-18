@@ -5,8 +5,7 @@
  */
 package Restaurant;
 
-import edu.blackburn.cs.cs212.restaurantbase.MenuItem;
-import edu.blackburn.cs.cs212.restaurantbase.Money;
+import edu.blackburn.cs.cs212.restaurantbase.*;
 
 /**
  *
@@ -21,7 +20,7 @@ public class Coffee extends MenuItem{
     public Coffee(String name, Money price){
         super(name,price);
         this.name = name;
-        price = this.basePrice;
+        this.basePrice = price;
     }
     @Override
     public String toString() {
@@ -33,9 +32,10 @@ public class Coffee extends MenuItem{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public String getReceiptItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   @Override
+   public String getReceiptItem() {
+       String s = name + " " + basePrice.toString() + "\n";
+       return s;
     }
     
 }
