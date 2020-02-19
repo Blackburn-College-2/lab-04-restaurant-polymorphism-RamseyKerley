@@ -11,17 +11,14 @@ import edu.blackburn.cs.cs212.restaurantbase.*;
  *
  * @author ramsey.kerley
  */
-public class Coffee extends MenuItem{
-    
-    private String name;
-    private Money basePrice;
-    
-    
-    public Coffee(String name, Money price){
-        super(name,price);
-        this.name = name;
-        this.basePrice = price;
+public class Coffee extends MenuItem {
+    Size size;
+
+    public Coffee(String name, Money price, Size size) {
+        super(name, price);
+        this.size = size;
     }
+
     @Override
     public String toString() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -29,13 +26,13 @@ public class Coffee extends MenuItem{
 
     @Override
     public Money getPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return super.getBasePrice();
     }
 
-   @Override
-   public String getReceiptItem() {
-       String s = name + " " + basePrice.toString() + "\n";
-       return s;
+    @Override
+    public String getReceiptItem() {
+        String s = size.toString() +" "+ super.getName() + " " + super.getBasePrice().getAmountString() + "\n";
+        return s;
     }
-    
+
 }

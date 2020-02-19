@@ -6,22 +6,23 @@
 package Restaurant;
 
 import edu.blackburn.cs.cs212.restaurantbase.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author ramsey.kerley
  */
-public class Size extends Measurement {
+public class FancyCoffee extends Coffee {
 
-    String name;
+    ArrayList<Orderable> addOn;
 
-    public Size(String name) {
-        this.name = name;
+    FancyCoffee(String name, Money basePrice, Size size) {
+        super(name, basePrice, size);
+        
     }
-
-    @Override
-    public String toString() {
-        return name;
+    
+    
+    public void add(){
+        addOn.add(this);
     }
-
 }
