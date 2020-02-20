@@ -14,15 +14,30 @@ import java.util.ArrayList;
  */
 public class FancyCoffee extends Coffee {
 
-    ArrayList<Orderable> addOn;
+    ArrayList<Orderable> addOn = new ArrayList<>();
 
     FancyCoffee(String name, Money basePrice, Size size) {
         super(name, basePrice, size);
-        
+
+    }
+
+    /**
+     * this adds a extra piece to the coffee
+     *
+     * @param o
+     */
+    public void add(Orderable o) {
+        addOn.add(o);
     }
     
-    
-    public void add(){
-        addOn.add(this);
+    /**
+     * gives the coffee and what is added
+     * @return string
+     */
+    @Override
+    public String toString() {
+        String syrup = addOn.toArray()[0].toString();
+        return super.toString() + "\n" + syrup;
     }
+
 }

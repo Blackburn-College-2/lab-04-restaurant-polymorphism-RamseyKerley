@@ -18,7 +18,10 @@ public class Size extends Measurement {
     public Size(String name) {
         this.name = name;
     }
-
+    /**
+     * gives the size
+     * @return size
+     */
     @Override
     public String toString() {
         return name;

@@ -5,27 +5,28 @@
  */
 package Restaurant;
 
-import edu.blackburn.cs.cs212.restaurantbase.*;
+import edu.blackburn.cs.cs212.restaurantbase.Money;
+import edu.blackburn.cs.cs212.restaurantbase.Orderable;
 
 /**
  *
  * @author ramsey.kerley
  */
-public class Syrup implements Orderable {
+public class Meat implements Orderable {
 
-    String flavor;
+    String name;
     Money price;
 
-    public Syrup(String flavor, Money price) {
+    public Meat(String name, Money price) {
 
-        this.flavor = flavor;
+        this.name = name;
         this.price = price;
     }
 
     /**
-     * gets price
+     * this gets the price
      *
-     * @return price as money
+     * @return money
      */
     @Override
     public Money getPrice() {
@@ -39,17 +40,16 @@ public class Syrup implements Orderable {
      */
     @Override
     public String getReceiptItem() {
-        return flavor + " $" + this.getPrice().getAmountString() + "\n";
-
+        return name + " $" + this.price.getAmountString() + "\n";
     }
     
     /**
-     * give the flavor name
-     * @return flavor
+     * gives the meats name
+     * @return name
      */
     @Override
     public String toString() {
-        return flavor;
+        return name;
     }
 
 }

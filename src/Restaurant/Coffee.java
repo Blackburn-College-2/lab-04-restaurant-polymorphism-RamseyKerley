@@ -12,6 +12,7 @@ import edu.blackburn.cs.cs212.restaurantbase.*;
  * @author ramsey.kerley
  */
 public class Coffee extends MenuItem {
+
     Size size;
 
     public Coffee(String name, Money price, Size size) {
@@ -19,20 +20,36 @@ public class Coffee extends MenuItem {
         this.size = size;
     }
 
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    /**
+     * gets the price of the item
+     *
+     * @return money
+     */
 
     @Override
     public Money getPrice() {
-       return super.getBasePrice();
+        return super.getBasePrice();
     }
 
+    /**
+     * this turn what you have into a name and prce
+     *
+     * @return string
+     */
     @Override
     public String getReceiptItem() {
-        String s = size.toString() +" "+ super.getName() + " " + super.getBasePrice().getAmountString() + "\n";
+        String s = size.toString() + " " + super.getName() + super.getBasePrice().getAmountString() + "\n";
         return s;
+    }
+
+    /**
+     * the coffee's name
+     *
+     * @return name
+     */
+    @Override
+    public String toString() {
+        return super.getName();
     }
 
 }
